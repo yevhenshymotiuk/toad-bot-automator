@@ -72,19 +72,20 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-	// msgs, err := scheduler.ScheduleFeedings(
-	// 	tdlibClient,
-	// 	3,
-	// 	6,
-	// 	time.Date(2020, 12, 19, 17, 34, 0, 0, l),
-	// )
-	// if err != nil {
-	// 	log.Fatalln(err)
-	// }
-	msgs, err := scheduler.ScheduleWork(
+	msgs, err := scheduler.ScheduleFeedings(
 		tdlibClient,
-		3,
-		time.Date(2020, 12, 19, 21, 3, 0, 0, l),
+		10,
+		6,
+		time.Date(2020, 12, 24, 21, 24, 0, 0, l),
+	)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	log.Println(msgs)
+	msgs, err = scheduler.ScheduleWork(
+		tdlibClient,
+		10,
+		time.Date(2020, 12, 25, 5, 17, 0, 0, l),
 	)
 	if err != nil {
 		log.Fatalln(err)

@@ -44,7 +44,7 @@ func scheduleMessagesWithCooldown(
 	cooldown time.Duration,
 ) ([]*client.Message, error) {
 	var messages []*client.Message
-	cooldown += time.Minute
+	cooldown += time.Second
 	scheduleTime := startTime
 
 	for i := 0; i < int(nTimes); i++ {
